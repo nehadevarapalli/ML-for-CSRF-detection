@@ -10,3 +10,12 @@ It also detects any possible replay attack scenarios and hence checks if a token
 We also perform testing which is aimed at providing an active testing of the CSRF protection mechanism. It includes checking if the protection exists for mobile browsers too by submitting requests with a self-generated token and testing if the token is being checked to a certain length.
 
 Various statistical tests like monobit frequency test, block frequency test. runs test, spectral test, etc., are performed.
+
+# Usage
+Run manage.py in the root directory and you will be able to see the possible subcommands that you can perform.
+
+Start with the command "python manage.py runserver" you will be able to see the localhost address on which the server is hosted. Go to that link and make a user account.
+
+Sign in to the admin account (whose password you can change later, for now username and password are both admin) and activate the user account which you just signed up with.
+
+Once your user account is activated you can login into the account and input the link and the depth at which you want to test the website for.
