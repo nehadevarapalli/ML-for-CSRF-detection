@@ -1,0 +1,54 @@
+{%extends 'users/userbase.html'%}
+
+{%block contents%}
+
+<div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+          <div class="item item-1">
+            <div class="img-fill">
+                <div class="text-content">
+                 <h2><font color="WHITE"> Machine Learning Results</font></h2>
+                     <table  border="2px" class="table table-hover table-dark">
+            <thead>
+            <tr class="table-danger">
+                <th scope="col">Method</th>
+                <th scope="col">Accuracy</th>
+                <th scope="col">Precesion</th>
+                <th scope="col">Recall</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr scope="row" style="color: white; background-color:GREEN">
+                <td>POST</td>
+                <td>{{post_dict.post_accuracy}}</td>
+                 <td>{{post_dict.post_precision}}</td>
+                 <td>{{post_dict.post_recall}}</td>
+            </tr>
+            <tr scope="row" style="color: white; background-color:RED">
+                <td>GET</td>
+                <td>{{get_dict.get_accuracy}}</td>
+                <td>{{get_dict.get_precision}}</td>
+                <td>{{get_dict.get_recall}}</td>
+           </tr>
+           <!-- <tr scope="row" style="color: white; background-color:RED">
+                <td>OPTION</td>
+                <td>{{option_dict.option_accuracy}}</td>
+                <td>{{option_dict.option_precision}}</td>
+                <td>{{option_dict.option_recall}}</td>
+           </tr>
+-->
+
+
+
+            </tbody>
+        </table>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+{%endblock%}

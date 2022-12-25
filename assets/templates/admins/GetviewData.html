@@ -1,0 +1,15 @@
+
+
+<center>
+        <h2>Machine Learning for Web Vulnerability Detection: The Case of Cross-Site Request Forgery</h2><br/>
+<h3>GET Requested Data View</h3> <h2><a href="{%url 'AdminHome'%}" class="btn-primary">Back</a> </h2>
+
+   {{data | safe}}
+    <ol>
+        <li><strong>numOfParams:</strong> the total number of parameters</li>
+        <li><strong>numOfBools:</strong>  the number of request parameters bound to a boolean value</li>
+        <li><strong>numOfIds:</strong>  the number of request parameters bound to an identifier, i.e., a hexadecimal string, whose usage was empirically observed to be common in our dataset</li>
+        <li><strong>numOfBlobs:</strong>  the number of request parameters bound to a blob, i.e., any string which is not an identifier</li>
+        <li><strong>reqLen:</strong>  the total number of characters in the request, including parameter names and values.</li>
+    </ol>
+    </center>

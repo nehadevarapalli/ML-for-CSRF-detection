@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+                  <h6>Fetch an Results of CSRFS</h6>
+    <a href="{%url 'AdminHome'%}">Back</a>
+                  <p>
+ <table  border="2px" class="table">
+            <thead>
+            <tr class="danger">
+                <th scope="col">S.No</th>
+                <th scope="col">Regex Name</th>
+                <th scope="col">CSRF hashesh</th>
+                <th scope="col">URL Name</th>
+                <th scope="col">Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in users %}
+            <tr scope="row" class="active">
+                <td>{{forloop.counter}}</td>
+                <td>{{i.regex}}</td>
+                <td>{{i.matches}}</td>
+                <td>{{i.urlname}}</td>
+                <td>{{i.c_date}}</td>
+
+            </tr>
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+    {% if users.has_other_pages %}
+  <ul class="pagination">
+    {% if users.has_previous %}
+      <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in users.paginator.page_range %}
+      {% if users.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if users.has_next %}
+      <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+                  </p>
+
+</div>
+</body>
+</html>
+
